@@ -45,4 +45,9 @@ and render(backend) for easy to take a look the real project rather than images
 ## noted
 1. I've got some problem from deploying a frontend which is the response's message 'OK' does not show. despite when running in local
 the status showing('OK') normally
-2. I've add the delete button for easy to manage the data while testing 
+  1.1. run on localhost
+   <img width="1437" alt="image" src="https://github.com/Pateezai/developer-examination/assets/63127601/ff1241a6-0c6a-4efe-a928-3479ccb15cbc">
+  1.2 run on vercel
+   <img width="1437" alt="image" src="https://github.com/Pateezai/developer-examination/assets/63127601/7537f30a-3937-4cef-8217-ca203c09d5d3">
+
+3. I've add the delete button for easy to manage the data while testing 
