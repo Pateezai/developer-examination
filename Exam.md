@@ -1,42 +1,47 @@
-#Fullstack
+# Fullstack
 
-##Final work
+## Final work
 Frontend - https://developer-examination.vercel.app/
 Backend - https://developer-examination-api.onrender.com/api
 
-Frontend 
+### Frontend 
+
 1. get all of the items show in the table
 <img width="1437" alt="image" src="https://github.com/Pateezai/developer-examination/assets/63127601/fc021d55-2abc-4148-ad37-a17bb2f12e6b">
+
 2. get the item by id (view button)
 <img width="1437" alt="image" src="https://github.com/Pateezai/developer-examination/assets/63127601/1887f0e6-c3fb-4701-90b8-aca7b781f501">
+
 3. update the each data (save changes button)
   3.1. change the item name from "test1.2.23" to "test1"
    <img width="1437" alt="image" src="https://github.com/Pateezai/developer-examination/assets/63127601/46875088-2875-4d39-8b4f-bedfa09e7481">
   3.2 refresh the page to see the updated result
    <img width="1437" alt="image" src="https://github.com/Pateezai/developer-examination/assets/63127601/429c3cd4-ee22-47ec-b62e-495e2b2b0c6d">
+
 4. insert the new item("save" from "Add Item Button")
   4.1. adding new item (test2)
    <img width="1437" alt="image" src="https://github.com/Pateezai/developer-examination/assets/63127601/5657a5e5-0672-4908-a063-7e6a224ac62d">
   4.2. refresh the page to see the updated result (test2)
    <img width="1437" alt="image" src="https://github.com/Pateezai/developer-examination/assets/63127601/6571f582-6343-48b2-b954-716b3d067c18">
+
 5. (additional "delete button") deleting the "test1"
    <img width="1437" alt="image" src="https://github.com/Pateezai/developer-examination/assets/63127601/8a6aeacb-ff2a-4b0c-ac4a-ffc52e95a058">
 
    
 
 
-Backend
+### Backend
 <img width="657" alt="image" src="https://github.com/Pateezai/developer-examination/assets/63127601/c36d3ab5-ec0c-4dfd-9643-204a3c1e1014">
 
-Database(Mongo Atlas)
+### Database(Mongo Atlas)
 <img width="1437" alt="image" src="https://github.com/Pateezai/developer-examination/assets/63127601/43e5fe77-03c1-44e8-921e-7a3b1a3cf3ed">
 
 
-##Description
+## Description
 Due to cannot connected to the provided username password and database. so i decided using my own mongo atlas database.
 From this exam i've been using pure html css and js as a frontend and using express as backend 
 
-##noted
+## noted
 1. I've got some problem from deploying a frontend which is the response's message 'OK' does not show. despite when running in local
 the status showing normally
 2. I've add the delete button for easy to manage the data while testing 
