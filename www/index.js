@@ -110,7 +110,6 @@ async function resItemId(data, key){
 
 async function deleteItem(data){
     await axios.delete(`https://developer-examination-api.onrender.com/api/del/id/${data._id}`)
-    console.log(delitem)
     console.log("item id:" + data._id + "has been deleted!")
     alert("This Item has been deleted! Pls refresh the Page")
     // console.log("delete" + key)
