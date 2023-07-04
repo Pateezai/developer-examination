@@ -48,6 +48,7 @@ the status showing('OK') normally
   1.1. run on localhost
    <img width="1437" alt="image" src="https://github.com/Pateezai/developer-examination/assets/63127601/ff1241a6-0c6a-4efe-a928-3479ccb15cbc">
   1.2 run on vercel
-   <img width="1437" alt="image" src="https://github.com/Pateezai/developer-examination/assets/63127601/7537f30a-3937-4cef-8217-ca203c09d5d3">
+   <img width="1437" alt="image" src="https://github.com/Pateezai/developer-examination/assets/63127601/38733447-b67f-473b-95ac-1cd4a0afdd12">
+
 
 3. I've add the delete button for easy to manage the data while testing 
