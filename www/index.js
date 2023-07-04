@@ -12,10 +12,16 @@ var descInput = document.getElementById('desc-input')
 
 
 document.addEventListener('DOMContentLoaded',async function(){
-    const res = await axios.get('https://developer-examination-api.onrender.com/api')
-    const resdata = res.data
-    console.log({status:'200', message:'OK', data: resdata})
-    resTable(resdata);
+    try {
+        const res = await axios.get('http://localhost:3000/api')
+        const resdata = res.data
+        console.log(res)
+        // console.log({status:'200', message:'OK', data: resdata})
+        resTable(resdata);
+    } catch (err) {
+        console.log(err)
+    }
+       
 })
 
 function resTable(data){
@@ -78,14 +84,22 @@ function resTable(data){
 }
 
 
-function resItemId(data, key){
+async function resItemId(data, key){
     // console.log(key)
     // console.log(data._id)
-    console.log({status:'200', message:'OK', data: data})
-    nameInput.value = data.name
-    priceInput.value = data.price 
-    qtyInput.value = data.quantity
-    descInput.value = data.desc
+    try {
+        const res = await axios.get(`http://localhost:3000/api/get_item_by_id/${data._id}`)
+        console.log(res)
+        const resdata = res.data
+        // console.log({status:'200', message:'OK', data: data})
+        nameInput.value = resdata.name
+        priceInput.value = resdata.price 
+        qtyInput.value = resdata.quantity
+        descInput.value = resdata.desc
+    } catch (err) {
+        console.log(err)
+    }
+    
 
     const savechanges = document.getElementById('savechanges')
     savechanges.addEventListener('click', function(){
@@ -95,8 +109,10 @@ function resItemId(data, key){
 }
 
 async function deleteItem(data){
-    await axios.delete(`https://developer-examination-api.onrender.com/api/del/id/${data._id}`)
+    await axios.delete(`http://localhost:3000/api/del/id/${data._id}`)
+    console.log(delitem)
     console.log("item id:" + data._id + "has been deleted!")
+    alert("This Item has been deleted! Pls refresh the Page")
     // console.log("delete" + key)
 }
 
@@ -104,14 +120,21 @@ async function deleteItem(data){
 
 
 async function updateItem(val, key){
-    const updatelist = await axios.put(`https://developer-examination-api.onrender.com/api/update_item/id/${val._id}`, {
+    try {
+        const updatelist = await axios.put(`http://localhost:3000/api/update_item/id/${val._id}`, {
         name: nameInput.value,
         price: priceInput.value,
         quantity: qtyInput.value,
         desc: descInput.value,
     })
-    console.log({status:'200', message:'OK'})
-    // console.log(updatelist.data)
+    // console.log({status:'200', message:'OK'})
+    console.log(updatelist)
+    alert("This Item has been updated! Pls refresh the Page")
+    } catch (err) {
+        console.log(err)
+    }
+        
+
     // console.log(val._id)
     // console.log(key)
 }
@@ -125,17 +148,20 @@ const handleCreate = async () =>{
 
     // console.log(name, price, qty, desc)
     try {
-        const res = await axios.post('https://developer-examination-api.onrender.com/api/insert_item/', {
+        const res = await axios.post('http://localhost:3000/api/insert_item/', {
             name: name,
             price: price,
             qty: qty,
             desc: desc,
         })
-        // console.log(res.data)
-        console.log({status: '200', message:'OK'})
+        console.log(res)
+        // console.log({status: '200', message:'OK'})
+        alert("This Item has been added! Pls refresh the Page")
     } catch (err) {
         console.log(err)
     }
+        
+
     document.getElementById("name").value = '';
     document.getElementById("price").value = '';
     document.getElementById("qty").value = '';

@@ -11,7 +11,7 @@ export const createItem = async (req,res, next) =>{
     })
     try {
         const saveItem = await newItem.save()
-        return console.log(res.status(200).json({status:'200', message:'OK', data: saveItem}))
+        return res.status(200).json(saveItem)
     } catch (err) {
         next(err);
     }
