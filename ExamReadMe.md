@@ -46,10 +46,10 @@ and render(backend) for easy to take a look the real project rather than images
 1. I've got some problem from deploying a frontend which is the response's message 'OK' does not show. despite when running in local
 the status showing('OK') normally
 
-   1.1. run on localhost (statusText'')
+   1.1. run on localhost (statusText:'OK')
    <img width="1437" alt="image" src="https://github.com/Pateezai/developer-examination/assets/63127601/ff1241a6-0c6a-4efe-a928-3479ccb15cbc">
 
-   1.2 run on vercel (statusText'OK')
+   1.2 run on vercel (statusText:'')
    <img width="1437" alt="image" src="https://github.com/Pateezai/developer-examination/assets/63127601/38733447-b67f-473b-95ac-1cd4a0afdd12">
 
 
