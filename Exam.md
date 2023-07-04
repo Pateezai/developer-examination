@@ -39,9 +39,10 @@
 
 ## Description
 Due to cannot connected to the provided username password and database. so i decided using my own mongo atlas database.
-From this exam i've been using pure html css and js as a frontend and using express as backend 
+From this exam i've been using pure html css and js as a frontend and using express as backend and depolying to vercel(frontend) 
+and render(backend) for easy to take a look the real project rather than images
 
 ## noted
 1. I've got some problem from deploying a frontend which is the response's message 'OK' does not show. despite when running in local
-the status showing normally
+the status showing('OK') normally
 2. I've add the delete button for easy to manage the data while testing 
