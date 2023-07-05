@@ -5,6 +5,9 @@
 
 // const renderTable = () => {
 // }
+
+// http://localhost:3000/api
+// https://developer-examination-api.onrender.com/api
 var nameInput = document.getElementById('name-input')
 var priceInput = document.getElementById('price-input')
 var qtyInput = document.getElementById('qty-input')
@@ -16,13 +19,15 @@ document.addEventListener('DOMContentLoaded',async function(){
         const res = await axios.get('https://developer-examination-api.onrender.com/api')
         const resdata = res.data
         console.log(res)
-        // console.log({status:'200', message:'OK', data: resdata})
+        console.log({status:'200', message:'OK', data: resdata})
         resTable(resdata);
     } catch (err) {
         console.log(err)
+        console.log({status:err.message, message:err.code})
     }
        
 })
+
 
 function resTable(data){
     const table = document.querySelector('table tbody')
@@ -91,13 +96,14 @@ async function resItemId(data, key){
         const res = await axios.get(`https://developer-examination-api.onrender.com/api/get_item_by_id/${data._id}`)
         console.log(res)
         const resdata = res.data
-        // console.log({status:'200', message:'OK', data: data})
+        console.log({status:'200', message:'OK', data: resdata})
         nameInput.value = resdata.name
         priceInput.value = resdata.price 
         qtyInput.value = resdata.quantity
         descInput.value = resdata.desc
     } catch (err) {
         console.log(err)
+        console.log({status:err.message, message:err.code})
     }
     
 
@@ -109,9 +115,14 @@ async function resItemId(data, key){
 }
 
 async function deleteItem(data){
-    await axios.delete(`https://developer-examination-api.onrender.com/api/del/id/${data._id}`)
-    console.log("item id:" + data._id + "has been deleted!")
-    alert("This Item has been deleted! Pls refresh the Page")
+    try {
+        await axios.delete(`https://developer-examination-api.onrender.com/api/del/id/${data._id}`)
+        console.log("item id:" + data._id + "has been deleted!")
+        alert("Item deleted! Pls refresh the Page")     
+    } catch (err) {
+        console.log(err)
+        console.log({status:err.message, message:err.code})
+    }
     // console.log("delete" + key)
 }
 
@@ -126,11 +137,12 @@ async function updateItem(val, key){
         quantity: qtyInput.value,
         desc: descInput.value,
     })
-    // console.log({status:'200', message:'OK'})
+    console.log({status:'200', message:'OK'})
     console.log(updatelist)
-    alert("This Item has been updated! Pls refresh the Page")
+    alert("Item updated! Pls refresh the Page")
     } catch (err) {
         console.log(err)
+        console.log({status:err.message, message:err.code})
     }
         
 
@@ -154,10 +166,11 @@ const handleCreate = async () =>{
             desc: desc,
         })
         console.log(res)
-        // console.log({status: '200', message:'OK'})
-        alert("This Item has been added! Pls refresh the Page")
+        console.log({status: '200', message:'OK'})
+        alert("New Item Add!! Pls refresh the Page")
     } catch (err) {
         console.log(err)
+        console.log({status:err.message, message:err.code})
     }
         
 

@@ -24,17 +24,17 @@ mongoose.connection.on("disconnected", ()=>{
 app.use(cors())
 app.use(express.json())
 app.use("/api", itemRoute)
-
-// app.use((err, req, res, next) => {
-//     const errorStatus = err.status || 500;
-//     const errorMessage = err.message || "Something went wrong!";
-//     return res.status(errorStatus).json({
-//       success: false,
-//       status: errorStatus,
-//       message: errorMessage,
-//       stack: err.stack,
-//     });
-//   });
+app.use((err, req, res, next) => {
+    // return res.status(500).json("adasd")
+    const errorStatus = err.status || 500;
+    const errorMessage = err.message || "Something went wrong!";
+    return res.status(errorStatus).json({
+      success: false,
+      status: errorStatus,
+      message: errorMessage,
+      stack: err.stack,
+    });
+  });
 
 app.listen(PORT, ()=>{
     connect()
