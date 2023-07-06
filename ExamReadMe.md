@@ -39,7 +39,7 @@
 
 ## Description
 Due to cannot connected to the provided username password and database. so i decided using my own mongo atlas database.
-From this exam i've been using pure html css and js as a frontend and using express as backend and depolying to vercel(frontend) 
+From this exam i've been using pure html js and bs for decoration as a frontend and using express as backend and depolying to vercel(frontend) 
 and render(backend) for easy to take a look the real project rather than images
 
 ## noted
