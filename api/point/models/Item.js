@@ -21,5 +21,5 @@ const ItemSchema = new mongoose.Schema({
     timestamps:true
 })
 
-export default mongoose.model("Item", ItemSchema, "products")
+export default mongoose.model("Item", ItemSchema, "items")
 
