@@ -10,7 +10,7 @@ dotenv.config()
 const PORT = 4000
 export const connect = async () => {
     try {
-        await mongoose.connect(process.env.MONGO)
+        await mongoose.connect('mongodb+srv://api_recruit:As4TapTe768DOS68@recruitment.mos8yva.mongodb.net/developer_exam?retryWrites=true&w=majority')
     } catch (error) {
         console.log(error)
     }
