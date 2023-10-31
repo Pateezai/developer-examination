@@ -13,7 +13,7 @@ const ItemSchema = new mongoose.Schema({
         type:Number,
         require:true,
     },
-    desc:{
+    description:{
         type:String,
         require:false,
     },
@@ -21,5 +21,5 @@ const ItemSchema = new mongoose.Schema({
     timestamps:true
 })
 
-export default mongoose.model("Item", ItemSchema)
+export default mongoose.model("Item", ItemSchema, "item_data")
 

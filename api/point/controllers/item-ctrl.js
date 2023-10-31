@@ -2,12 +2,11 @@ import Item from "../models/Item.js";
 
 
 export const createItem = async (req,res, next) =>{
-
     const newItem = new Item({
         name: req.body.name,
         price: req.body.price,
         quantity: req.body.qty,
-        desc: req.body.desc,
+        description: req.body.description,
     })
     try {
         const saveItem = await newItem.save()
@@ -30,7 +29,8 @@ export const getItem = async (req,res,next) =>{
 
 export const getItems = async (req,res,next) =>{
     try {
-        const items = await Item.find(req.query).limit(req.query.limit)
+        const items = await Item.find(req.query)
+
         return res.status(200).json(items)
         
     } catch (err) {

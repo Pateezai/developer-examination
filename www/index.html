@@ -2,16 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
     <link href="./css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="./index.css" />
   </head>
@@ -38,7 +30,7 @@
               </button>
             </div>
             <div class="card-body">
-              <table id="restable" class="restable table mx-2 table-dark table-striped align-middle">
+              <table id="restable" class="restable table table-bordered table-hover table-dark table-striped align-middle">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
@@ -48,7 +40,7 @@
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody id="tbody">
                   <!-- code in index.js -->
                   
                   <!-- code in index.js -->
@@ -57,6 +49,7 @@
             </div>
           </div>
           <!-- Table -->
+
           <!-- Popup Modal Edit -->
           <div
             class="modal fade"
@@ -113,7 +106,7 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="desc" class="form-label">Description</label>
+                            <label for="desc-input" class="form-label">Description</label>
                             <textarea id="desc-input" class="form-control"rows="3"></textarea>
                         </div>
                       </form>
@@ -134,8 +127,77 @@
               </div>
             </div>
           </div>
-
           <!-- Popup Modal Edit -->
+
+          <!-- Popup Modal View -->
+          <div
+            class="modal fade"
+            id="justview"
+            data-bs-backdrop="static"
+            data-bs-keyboard="false"
+            tabindex="-1"
+            aria-labelledby="justviewLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="justviewLabel">
+                    Item's Info
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body edit-modal">
+                      <!-- Form Info -->
+
+                    <form id="view-form" class="view-form m-2z">
+                        <div class="mb-3 col-12">
+                          <label for="name" class="form-label">Name</label>
+                          <input
+                            disabled
+                            type="text"
+                            class="form-control"
+                            aria-describedby="emailHelp"
+                            id="name-view"
+                          />
+                        </div>
+                        <div class="d-flex row mb-3  gap-1">
+                            
+                            <div class="col">
+                                <label for="price" class="form-label">Price</label>
+                                <input
+                                  disabled  
+                                  type="number"
+                                  class="form-control"
+                                  id="price-view"
+                                />
+                            </div>
+                            <div class="col">
+                                <label for="qty" class="form-label">Quantity</label>
+                                <input
+                                  disabled
+                                  type="number"
+                                  class="form-control"
+                                  id="qty-view"
+                                />
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="desc" class="form-label">Description</label>
+                            <textarea disabled id="desc-view" class="form-control"rows="3"></textarea>
+                        </div>
+                      </form>
+                      <!-- Form Info -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Popup Modal View -->
 
           <!-- Popup Modal Add -->
           <div
@@ -226,14 +288,15 @@
             </div>
           </div>
           <!-- Popup Modal Add -->
+
         </div>
       </div>
     </div>
   </body>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-  <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-  <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
   <script src="./js/bootstrap.min.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="./index.js"></script>
