@@ -171,7 +171,7 @@ const handleCreate = async () =>{
 
     // console.log(name, price, qty, desc)
     try {
-        const res = await api_server.post('/api/insert_item/', {
+        const res = await endpoint.post('/api/insert_item/', {
             name: name,
             price: price,
             qty: qty,
